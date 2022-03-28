@@ -1,0 +1,27 @@
+<html>
+
+<head>
+	<title>Ma première page avec du style</title>
+	<style type="text/css">
+		body {
+			color: purple;
+			background-color: #d8da3d
+		}
+	</style>
+
+	<h1 align="center">Ma première view </h1>
+
+	<h2 th:text="${name}"> </h2>
+	<h2 th:text="${universite}"> </h2>
+	<h2 th:text="${email}"> </h2>
+
+
+	<h2> Liste des modules </h2>
+	<ul th:each="cour : ${cours}">
+		<li th:text="${cour}" />
+	</ul>
+
+
+</head>
+
+<body>

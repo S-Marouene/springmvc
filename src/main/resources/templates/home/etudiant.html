@@ -1,0 +1,39 @@
+<html>
+
+<head>
+	<title>Ma première page avec du style</title>
+	<link rel="stylesheet" href="/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/main.css">
+</head>
+
+<body>
+	<img th:src="@{/image/logo.png}" width=17%>
+
+	<h1 align="center">Liste des Etudiants </h1>
+
+	<br><br><br>
+	<a class="btn btn-secondary" th:href="@{/add}">Add Etudiant</a>
+	<table class="table table-bordered" border="1" align="center">
+		<thead class="thead-dark">
+			<th class="text-center"> Nom </th>
+			<th class="text-center"> Age </th>
+			<th class="text-center"> Tel° </th>
+			<th class="text-center"> Adresse </th>
+		</thead>
+
+		<tbody>
+			<th:block th:each="students : ${students}">
+				<tr>
+					<td class="text-center">[[${students.nom}]]</td>
+					<td class="text-center">[[${students.age}]]</td>
+					<td class="text-center">[[${students.tel}]]</td>
+					<td class="text-center">[[${students.adresse}]]</td>
+				</tr>
+		</tbody>
+	</table>
+
+	</div>
+
+</body>
+
+</html>
