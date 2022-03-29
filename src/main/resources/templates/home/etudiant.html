@@ -19,6 +19,7 @@
 			<th class="text-center"> Age </th>
 			<th class="text-center"> Tel° </th>
 			<th class="text-center"> Adresse </th>
+			<th class="text-center"> Modif </th>
 		</thead>
 
 		<tbody>
@@ -28,6 +29,11 @@
 					<td class="text-center">[[${students.age}]]</td>
 					<td class="text-center">[[${students.tel}]]</td>
 					<td class="text-center">[[${students.adresse}]]</td>
+					<td class="text-center">
+						<a class="btn btn-danger" th:href="@{/delete}">Delete</a>
+						<a class="btn btn-success" th:href="@{/add}">Update</a>
+						
+					</td>
 				</tr>
 		</tbody>
 	</table>

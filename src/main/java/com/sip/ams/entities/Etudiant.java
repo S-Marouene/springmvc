@@ -15,6 +15,12 @@ public class Etudiant {
 	}
 
 
+	@Override
+	public String toString() {
+		return "Etudiant [nom=" + nom + ", age=" + age + ", tel=" + tel + ", adresse=" + adresse + "]";
+	}
+
+
 	public String getNom() {
 		return nom;
 	}
