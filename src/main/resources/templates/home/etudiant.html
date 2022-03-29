@@ -30,9 +30,8 @@
 					<td class="text-center">[[${students.tel}]]</td>
 					<td class="text-center">[[${students.adresse}]]</td>
 					<td class="text-center">
-						<a class="btn btn-danger" th:href="@{/delete}">Delete</a>
-						<a class="btn btn-success" th:href="@{/add}">Update</a>
-						
+						<a class="btn btn-danger" th:href="@{/delete/{tel}(tel=${students.tel})}">Delete</a>
+						<a class="btn btn-warning" th:href="@{/add}">Update</a>
 					</td>
 				</tr>
 		</tbody>

@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -76,8 +78,23 @@ public class FirstController {
 		students.add(et);
 		
 		return "redirect:/list";
+	}
+	
+	@GetMapping("/delete/{tel}")
+	//@ResponseBody
+	public String delete_etudiant(@PathVariable("tel")String tel) {
+		Etudiant temp=null;
 		
-		//return "home/addstudiant";
+		for(Etudiant e: students) {
+		  if(e.getTel().equals( tel) ) {
+			  temp=e;
+		  }	
+		}
+		
+		System.out.println(students);
+		students.remove(temp);
+		
+		return "redirect:../list";
 	}
 	
 	
