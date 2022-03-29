@@ -1,0 +1,37 @@
+docker --version
+docker images  (show all images)
+docker rmi nom_de_limage -f (remove image -f (force))
+docker rm -f (remove conteneur)
+docker ps (show les process (conteneur is running))
+docker stop nom_du_conteneur
+docker rmi id_contenur1 id_contenru2 id_conteur3 
+docker ps -a (show old process)
+docker pull nom_de_limage
+docker images
+
+_________________________________
+docker pull httpd   (download image from dockerhub)
+docker images
+docker run -d  (-d en mode detacher avec console)
+	   -p 8084:80 (-p specify the port 8084 au lieu de 80)
+	   --name nom_conteneur nom_de_limage
+
+==> docker run -d -p 8181:80 --name serveurappache httpd
+
+docker exec -it id_conteneur(3 1er caracter) (mode interactive)
+exemple 
+docker exec -it 1c0 /bin/bash
+echo "<h1>Foulen ben foulen</h1>" > index.html
+
+docker build -t ams .  (-t title)(ams nom de limage )(. du rep courant) apre la creation du fichier docker
+
+docker run -d -p 9090:8080 --name my_ams ams
+
+
+to upload in docker hub
+_______________________
+create new repository in docker hub
+docker login
+docker tag ams repository 
+docker push saidimarouene/ams:tagname
+ 
